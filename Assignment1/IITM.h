@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <string>
+#include <random>
+#include <ctime>
 #include "Btech.h"
 #include "DualDegree.h"
 #include "Faculty.h"
@@ -10,11 +13,27 @@ using namespace std;
 class IITM{
     public:
         IITM(int n, int m, int h){
+            string alphabets = "AAAAAAAAABCCDDDEEEEEEEEEFFFFGHHHIIIIIJKLLLMMNNNNNNNOOOOOOOPQRRRSSSSSTTTTTTUUVWWXYYZ    ";
+            int size = alphabets.size();
+            mt19937 rng(static_cast<unsigned long long>(time(nullptr)));
+            uniform_int_distribution<> symbol(0,size-1);
+            uniform_int_distribution<> boolval(0,1);
+            uniform_int_distribution<> probab(0,100);
+            uniform_real_distribution<> cg_gen(0,10);
             for(int i = 0 ; i < h ; i++) {
-                hostels.push_back("hostel"+to_string(i+1));
+                string name = "";
+                for(int x = 0 ; x < 20 ; x++) {
+                    name += alphabets[symbol(rng)];
+                }
+                hostels.push_back(name);
             }
             for(int i = 0 ; i < m ; i++) {
-
+                string name = "";
+                for(int x = 0 ; x < 20 ; x++) {
+                    name += alphabets[symbol(rng)];
+                }
+                bool perma = boolval(rng);
+                Faculty temp(name,perma);
             }
         }
         void addBTechStudent(Btech* student) {
