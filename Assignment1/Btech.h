@@ -16,6 +16,9 @@ class Btech {
         string getHostel() {
             return hostel;
         }
+        float getCG() {
+            return cgpa;
+        }
         Faculty* getFacad() {
             return facad;
         }
@@ -28,10 +31,13 @@ class Btech {
         void setBTPGuide(Faculty* fac) {
             BTPGuide = fac;
         }
+        string get_roll() {
+            return roll.get_val();
+        }
     private:
         RollNumber roll;
         string hostel;
         Faculty* facad;
         float cgpa;
-        Faculty* BTPGuide;
+        Faculty* BTPGuide = nullptr;
 };

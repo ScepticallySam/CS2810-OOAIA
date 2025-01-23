@@ -19,13 +19,13 @@ class Faculty {
             else return "Adjunct";
         }
         bool addBTPAdvisee(Btech* student) {
-            if(BTPAdvisees.size() == 2)return false;
+            if(BTPAdvisees.size() == 2 || !isPermanent)return false;
             BTPAdvisees.push_back(student);
             student->setBTPGuide(this);
             return true;
         }
-        bool addDDAdvisees(DualDegree* student) {
-            if(DDAdvisees.size() == 2)return false;
+        bool addDDAdvisee(DualDegree* student) {
+            if(DDAdvisees.size() == 2 || !isPermanent)return false;
             DDAdvisees.push_back(student);
             student->setDDPGuide(this);
             return true;
@@ -35,6 +35,11 @@ class Faculty {
             TAs.push_back(student);
             student->setTASupervisor(this);
             return true;
+        }
+        void print_Advisees () {
+            cout << name << "'s Advisees:\n";
+            for(auto elem : BTPAdvisees)cout << elem->get_roll() << endl;
+            for(auto elem : DDAdvisees)cout << elem->get_roll() << endl;
         }
     private:
         string name;

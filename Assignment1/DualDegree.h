@@ -34,11 +34,14 @@ class DualDegree {
         void setTASupervisor(Faculty* fac) {
             TASupervisor = fac;
         }
+        string get_roll() {
+            return roll.get_val();
+        }
     private:
         RollNumber roll;
         string hostel;
         Faculty* facad;
         float cgpa;
-        Faculty* DDPGuide;
-        Faculty* TASupervisor;
+        Faculty* DDPGuide = nullptr;
+        Faculty* TASupervisor = nullptr;
 };

@@ -16,4 +16,11 @@ int main() {
     cout << "Enter the number of Hostels: ";
     cin >> h;
     IITM iitm(n,m,h);
+    cout << iitm.same_mentors_percent() << endl;
+    // iitm.print_students("Roll");
+    iitm.print_students("Guide");
+    // iitm.print_students("Hostel");
+    // iitm.print_students("Rol");
+    iitm.print_guideless();
+
 }
