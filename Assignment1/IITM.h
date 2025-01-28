@@ -72,7 +72,7 @@ class IITM{
             sort(copy.begin(),copy.end(),[](Btech* b1, Btech* b2){
                 return b1->getCG() > b1->getCG();
             });
-            for(int x = 0 ; x < 2*perma_faculty_count;) {
+            for(int x = 0 ; x < 2*perma_faculty_count && x < BTechStudents.size();) {
                 Faculty* fac = faculties[facaulty_pick(rng)];
                 if(fac->addBTPAdvisee(copy[x]))x++;
             }
@@ -81,7 +81,7 @@ class IITM{
             sort(copy1.begin(),copy1.end(),[](DualDegree* d1, DualDegree* d2){
                 return d1->getHostel() < d2->getHostel();
             });
-            for(int x = 0 ; x < 2*perma_faculty_count;) {
+            for(int x = 0 ; x < 2*perma_faculty_count && x < DDStudents.size();) {
                 Faculty* fac = faculties[facaulty_pick(rng)];
                 if(fac->addDDAdvisee(copy1[x]))x++;
             }
@@ -166,7 +166,7 @@ class IITM{
                 if(elem->getFacad()->get_name() == facad && elem->getHostel() == hostel)cout << elem->get_roll() << endl;
             }
         }
-        
+
     private:
         vector<Btech*> BTechStudents;
         vector<DualDegree*> DDStudents;
