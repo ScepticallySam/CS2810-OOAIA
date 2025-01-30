@@ -205,7 +205,7 @@ int main() {
                 Book book;
                 myLibrary.addBook(book);
             }
-            else if(first == "ExisitingBook") {
+            else if(first == "ExistingBook") {
                 string old_isbn, new_isbn;
                 cin >> old_isbn >> new_isbn;
                 Book copy = myLibrary.get_book(old_isbn); //finding the book, copy of the object is enough, no need of reference
