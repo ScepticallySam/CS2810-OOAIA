@@ -1,0 +1,27 @@
+4 2 2
+1200 600 250 0
+1300 700 300 10
+1400 750 350 20
+1600 900 400 30
+CaptainAmerica 110
+Hulk 200
+Thanos 250
+RedSkull 180
+BattleBegin
+Attack Thanos CaptainAmerica
+AvengerStatus CaptainAmerica
+Attack RedSkull Hulk
+AvengerStatus Hulk
+Repair Hulk 40
+AvengerStatus Hulk
+BoostPowerByFactor RedSkull 3
+AvengerStatus RedSkull
+Attack Thanos Hulk
+AvengerStatus Hulk
+Attack RedSkull CaptainAmerica
+AvengerStatus CaptainAmerica
+Attack Thanos CaptainAmerica
+AvengerStatus CaptainAmerica
+PrintBattleLog
+BattleStatus
+End
