@@ -379,8 +379,8 @@ int main(){
             }
             Polynomial<Complex> a1(vec);
             Polynomial<Complex> a2(vec1);
-            Multiplication<Complex> m;
-            Polynomial<Complex> a3 = m.multiply(a1,a2);
+            // Multiplication<Complex> m;
+            Polynomial<Complex> a3 = a1 * a2;
             a3.print();
         }
         else if(type == "integer") {
@@ -400,8 +400,8 @@ int main(){
                     vec1.push_back(num);
                 }
                 Polynomial<long long int> p2(vec1);
-                Multiplication<long long int> m;
-                Polynomial<long long int> p3 = m.multiply(p1,p2);
+                // Multiplication<long long int> m;
+                Polynomial<long long int> p3 = p1 * p2;
                 vector<long long int> v1 = p3.get_vec();
                 for(auto elem : v1) cout << fixed << setprecision(0) << elem << " ";
                 cout << endl;
@@ -438,8 +438,8 @@ int main(){
                     vec1.push_back(num);
                 }
                 Polynomial<long double> p2(vec1);
-                Multiplication<long double> m;
-                Polynomial<long double> p3 = m.multiply(p1,p2);
+                // Multiplication<long double> m;
+                Polynomial<long double> p3 = p1 * p2;
                 p3.print();
             }
             else if(query == 2) {
